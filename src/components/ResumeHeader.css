@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  align-items: flex-end;
+
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #fff;
+}
+
+/* To get name + title to align */
+.name,
+.job-title {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.job-title {
+  margin-left: 1em;
+
+  position: relative;
+  bottom: 2.3pt;
+}

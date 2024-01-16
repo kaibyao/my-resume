@@ -17,11 +17,6 @@ header {
 .job-title {
   margin-bottom: 0;
   line-height: 1;
-  font-weight: 500;
-}
-
-.name {
-  font-size: 24pt;
 }
 
 .job-title {
@@ -29,6 +24,8 @@ header {
 
   position: relative;
   bottom: 2.3pt;
+
+  font-weight: 500;
 }
 
 .contact-info {
@@ -37,6 +34,6 @@ header {
 
 .email,
 .phone {
-  margin: 0;
+  margin-bottom: 0;
   text-align: right;
 }

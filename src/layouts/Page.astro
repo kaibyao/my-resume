@@ -40,7 +40,7 @@ const { frontmatter } = Astro.props;
   }
 
   html {
-    font-size: 12pt;
+    font-size: 10pt;
     line-height: 1.4;
 
     font-family: "Avenir";
@@ -71,7 +71,33 @@ const { frontmatter } = Astro.props;
     color: white;
   }
 
-  code {
+  h1, h2, h3 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    margin-top: 2em;
+    font-size: 12pt;
+  }
+
+  h3 {
+    font-size: 10pt;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  ul {
+    padding-left: 1.5em;
+  }
+
+  /* code {
 		font-family:
 			Menlo,
 			Monaco,
@@ -81,5 +107,5 @@ const { frontmatter } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
-	}
+	} */
 </style>

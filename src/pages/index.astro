@@ -1,29 +1,36 @@
 ---
-import Page from '../layouts/Page.astro';
-import { ResumeHeader } from '../components/ResumeHeader';
+import Page from "../layouts/Page.astro";
+import { ResumeHeader } from "../components/ResumeHeader";
 ---
 
 <Page title="Kai Yao’s resumé">
-	<main>
-		<ResumeHeader />
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-	</main>
+  <ResumeHeader />
+
+  <h2>Experience</h2>
+
+  <h3>
+    Sr Software Engineer — Squarespace Inc. (pre-acquisition: Tock, LLC) [Nov
+    2020 – Nov 2023]
+  </h3>
+  <p>
+    Implemented product features across the tech stack for an application that
+    supports restaurant hosts and admins to manage reservations, including:
+    bookings, menus, real-time sync between user devices, check-ins, &
+    payment/refunds, all while taking accessibility concerns into account.
+  </p>
+
+  <h2>Education</h2>
+
+  <h3>The Starter League, Visual Design</h3>
+  <p>
+    A 10-week crash course where I learned the foundational concepts of visual
+    design and its usage in software.
+  </p>
+
+  <h3>University of Illinois at Urbana-Champaign</h3>
+  <p>
+    Bachelor of Science, Biochemistry.
+  </p>
 </Page>
 
-<style>
-	main {
-		margin: 0 auto;
-		width: 8in;
-
-		color: white;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		margin-bottom: 1em;
-	}
-</style>
+<style></style>

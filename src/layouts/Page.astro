@@ -17,7 +17,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 <style is:global>
@@ -59,14 +61,21 @@ const { title } = Astro.props;
     box-sizing: border-box;
   }
 
-	a {
-		color: #fff;
-	}
-	a:hover {
-		color: lightblue;
-	}
+  a {
+    color: #fff;
+  }
+  a:hover {
+    color: lightblue;
+  }
 
-  /* code {
+  main {
+    margin: 0 auto;
+    width: 8in;
+
+    color: white;
+  }
+
+  code {
 		font-family:
 			Menlo,
 			Monaco,
@@ -76,5 +85,5 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
-	} */
+	}
 </style>

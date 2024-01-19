@@ -10,11 +10,10 @@ import { ResumeHeader } from "../components/ResumeHeader";
 ## Experience
 
 ### Sr Software Engineer — Squarespace Inc. (pre-acquisition: Tock, LLC) \[Nov 2020 – Nov 2023]
-
 Implemented product features across the tech stack for an application that supports restaurant hosts and admins to manage reservations, including: bookings, menus, real-time sync between user devices, check-ins, &
 payment/refunds, all while taking accessibility concerns into account.
 
-#### Notable projects include:
+#### Notable projects:
 * Revamped a menu system that allowed restaurants to reuse menus across different experiences, which deduplicated data and made restaurant offerings easier to manage.
   * Implemented model/DB relations between menus, their sections, and menu items.
   * Implemented API endpoints & business logic for creating & updating menu data.
@@ -25,7 +24,7 @@ payment/refunds, all while taking accessibility concerns into account.
   * Built user-facing UI to allow businesses to configure taxes on their purchaseable goods.
 * Built improvements to the reservation management application used by Restaurant Hosts, increasing user satisfaction and reducing maintenance overhead for product team members.
   * Built/merged features that allowed hosts to reschedule reservations to different days.
-  * Improved initial calendar load performance for world-renowned restaurants from 25\~30 seconds down to 5\~7 seconds.
+  * Improved initial calendar load performance from 25\~30 seconds down to 5\~7 seconds for some of the busiest, world-renowned restaurants.
 
 #### Technologies used:
 * Database/model relations configured via ***MySQL + Java (Guice) + Protobuf + Hibernate ORM***. Database migrations managed with ***ActiveRecord***.
@@ -34,12 +33,31 @@ payment/refunds, all while taking accessibility concerns into account.
 * UI written in ***TypeScript + React + Redux + Emotion CSS + Material UI + Formik***.
 * Testing frameworks: ***Jest***, ***JUnit***, ***Selenium***.
 * Monitoring, logging, and analytics: ***Prometheus***, ***Grafana***, and ***Amplitude***.
-* Build/tooling: Webpack, babel/SWC, Docker.
+* Build/tooling: ***Webpack***, ***babel/SWC***, ***Docker***.
 
 #### Other responsibilities:
 * Member of the on-call rotation, which meant managing incidents and coordinating post-mortem meetings & action items.
 * Maintenance & improvement of cloud infrastructure.
 * Improved front-end build tooling, improving start-up times and increasing developer happiness.
+
+### Sr Software Engineer — Accruent (pre-acquisition: Connectiv, Inc.) \[Jan 2017 – Nov 2020]
+Designed and built a suite of web applications and partner integrations to help healthcare technicians manage and maintain medical devices.
+
+#### Notable work:
+* Built tooling to speed up our development & deployment processes:
+  * Wrote a code modification tool to convert a legacy JavaScript codebase to TypeScript.
+  * Wrote a tool to transpile modern TypeScript to a non-standard format of JavaScript (used by the ServiceNow platform).
+  * Wrote a tool to package and deploy code updates to ServiceNow instances.
+* Wrote an integration to allow for real-time synchronization of medical device statuses & physical locations to/from a 3rd party real-time locating system (Midmark RTLS).
+* Built an offline-first web application to allow for technicians to update work orders while in an offline-first environment (such as in an MRI room, where wireless internet is not allowed).
+* Established code review and SDLC processes to stabilize deployments / long-term maintenance.
+* Led Dev Tactical meetings to improve development processes.
+* Took over interim product management duties to help keep the team moving.
+
+#### Technologies used:
+* UIs written in ***HTML + Sass CSS (SCSS)***, ***JavaScript + TypeScript***, and ***React + Redux***.
+* Offline-first functionality using ***Service Workers***
+* Application stack built on the ***ServiceNow*** platform.
 
 ## Education
 

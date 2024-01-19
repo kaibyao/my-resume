@@ -15,16 +15,17 @@ Implemented product features across the tech stack for an application that suppo
 payment/refunds, all while taking accessibility concerns into account.
 
 #### Notable projects include:
-* Revamped a menu system that allows restaurants to reuse their menus across different experiences.
+* Revamped a menu system that allowed restaurants to reuse menus across different experiences, which deduplicated data and made restaurant offerings easier to manage.
   * Implemented model/DB relations between menus, their sections, and menu items.
   * Implemented API endpoints & business logic for creating & updating menu data.
-  * Wrote UIs + forms for users to create & update their menus & items.
-* New tax system that made our products tax-compliant as a marketplace facilitator with various US states after the company was acquired + went public.
-  * Designed & implemented tax categorization hierarchy based on global > regional > business account settings.
-  * Designed & implemented internal-only configuration to allow our internal support team to override customer settings with "hidden" tax categories.
-  * Wrote user-facing UI to allow businesses to configure taxes on their purchaseable goods.
-* Merged/streamlined several, duplicative UX interactions, improving restaurant host satisfaction and making future improvements easier for designers and engineers.
-
+  * Built UIs + forms for users to create & update their menus & items.
+* New tax system that ensured our company's compliance with tax regulations as a marketplace facilitator with multiple US states, following the company's acquisition and public listing.
+  * Designed & implemented a tax categorization hierarchy based on global > regional > business account settings.
+    * Also designed & implemented a flexible configuration system to allow our internal support team to override customer settings with "hidden" tax categories as needed.
+  * Built user-facing UI to allow businesses to configure taxes on their purchaseable goods.
+* Built improvements to the reservation management application used by Restaurant Hosts, increasing user satisfaction and reducing maintenance overhead for product team members.
+  * Built/merged features that allowed hosts to reschedule reservations to different days.
+  * Improved initial calendar load performance for world-renowned restaurants from 25\~30 seconds down to 5\~7 seconds.
 
 #### Technologies used:
 * Database/model relations configured via ***MySQL + Java (Guice) + Protobuf + Hibernate ORM***. Database migrations managed with ***ActiveRecord***.
@@ -32,9 +33,13 @@ payment/refunds, all while taking accessibility concerns into account.
 * Client/server interactions written using: ***REST***, ***WebSockets***, and ***GraphQL (Apollo)***.
 * UI written in ***TypeScript + React + Redux + Emotion CSS + Material UI + Formik***.
 * Testing frameworks: ***Jest***, ***JUnit***, ***Selenium***.
+* Monitoring, logging, and analytics: ***Prometheus***, ***Grafana***, and ***Amplitude***.
+* Build/tooling: Webpack, babel/SWC, Docker.
 
 #### Other responsibilities:
-* Test
+* Member of the on-call rotation, which meant managing incidents and coordinating post-mortem meetings & action items.
+* Maintenance & improvement of cloud infrastructure.
+* Improved front-end build tooling, improving start-up times and increasing developer happiness.
 
 ## Education
 

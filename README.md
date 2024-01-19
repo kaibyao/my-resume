@@ -1,42 +1,12 @@
-# Astro Starter Kit: Basics
+# My Resumé
 
-```sh
-npm create astro@latest -- --template basics
-```
+Once upon a time, people (myself included) wrote their resumés using an application called Microsoft Word. These days, I rarely use Word and don’t have it installed on any of my machines.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+At some point I had converted my resumé to the Adobe Illustrator (and later Affinity Designer) format, but found that as I stopped using Illustrator day-to-day, my muscle memory of its actions faded and I had a harder time editing previous job experiences + adding new ones. I also found that it’s not actually that great of a tool when the main thing wanted to do was edit text.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Now, given how far we’ve come with web frameworks and given that I will probably always be writing web applications as my day job, why not convert my resumé to code? This repo houses my current resumé, built on [React](https://react.dev/) + [Astro](https://astro.build/). Astro makes it easy to immediately get started with writing textual information in [MDX format](https://mdxjs.com/), while still allowing for UI customization via React.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## 🧞 Astro Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,6 +19,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## To dos
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+* Improve layout of experience title + years worked.
+* Collapsible experiences.
+* Highlight technologies used per job responsibility.
+* react-to-print.
+* Dark vs light mode toggle.

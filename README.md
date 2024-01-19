@@ -26,3 +26,4 @@ All commands are run from the root of the project, from a terminal:
 * Highlight technologies used per job responsibility.
 * react-to-print.
 * Dark vs light mode toggle.
+* Page breaks when printing.

@@ -13,10 +13,28 @@ import { ResumeHeader } from "../components/ResumeHeader";
 
 Implemented product features across the tech stack for an application that supports restaurant hosts and admins to manage reservations, including: bookings, menus, real-time sync between user devices, check-ins, &
 payment/refunds, all while taking accessibility concerns into account.
-* Implemented a revamped menu system that allowed restaurants to re-use their menus across different experiences.
-  * Database/model relations configured via ***Java + Protobuf + Hibernate ORM***.
-  * Server logic written in ***Java***.
-  * UI written in ***TypeScript + React + Redux + Emotion CSS + Material UI***.
+
+#### Notable projects include:
+* Revamped a menu system that allows restaurants to reuse their menus across different experiences.
+  * Implemented model/DB relations between menus, their sections, and menu items.
+  * Implemented API endpoints & business logic for creating & updating menu data.
+  * Wrote UIs + forms for users to create & update their menus & items.
+* New tax system that made our products tax-compliant as a marketplace facilitator with various US states after the company was acquired + went public.
+  * Designed & implemented tax categorization hierarchy based on global > regional > business account settings.
+  * Designed & implemented internal-only configuration to allow our internal support team to override customer settings with "hidden" tax categories.
+  * Wrote user-facing UI to allow businesses to configure taxes on their purchaseable goods.
+* Merged/streamlined several, duplicative UX interactions, improving restaurant host satisfaction and making future improvements easier for designers and engineers.
+
+
+#### Technologies used:
+* Database/model relations configured via ***MySQL + Java (Guice) + Protobuf + Hibernate ORM***. Database migrations managed with ***ActiveRecord***.
+* Server logic written in ***Java***.
+* Client/server interactions written using: ***REST***, ***WebSockets***, and ***GraphQL (Apollo)***.
+* UI written in ***TypeScript + React + Redux + Emotion CSS + Material UI + Formik***.
+* Testing frameworks: ***Jest***, ***JUnit***, ***Selenium***.
+
+#### Other responsibilities:
+* Test
 
 ## Education
 

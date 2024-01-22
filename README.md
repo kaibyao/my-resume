@@ -23,6 +23,18 @@ All commands are run from the root of the project, from a terminal:
 
 * Page breaks when printing.
 * Improve readability w/ a different font for paragraphs.
+  * Sans-serif:
+    * Lato (for capitalized titles + reading paragraphs)
+    * Noto Sans
+    * Open Sans
+    * Poppins (for capitalized titles)
+    * Montserrat (for capitalized titles)
+  * Serif:
+    * Lora
+    * Noto serif
+    * Merriweather
+    * Georgia
+    * Bookerly
 * Highlight technologies used per job responsibility.
 * Dark vs light mode toggle.
 * Collapsible experiences.

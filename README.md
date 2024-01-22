@@ -21,9 +21,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## To dos
 
-* Improve layout of experience title + years worked.
-* Collapsible experiences.
-* Highlight technologies used per job responsibility.
-* react-to-print.
-* Dark vs light mode toggle.
 * Page breaks when printing.
+* Improve readability w/ a different font for paragraphs.
+* Highlight technologies used per job responsibility.
+* Dark vs light mode toggle.
+* Collapsible experiences.

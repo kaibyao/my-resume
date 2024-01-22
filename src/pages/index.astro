@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { ResumeHeader } from "../components/ResumeHeader/ResumeHeader";
+import Experience from "../components/Experience/Experience.astro";
+import PageLayout from "../layouts/Page.astro";
+
+const experiences = await getCollection("experience");
+experiences.sort(
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
+);
+---
+
+<PageLayout>
+  <ResumeHeader />
+
+  <h2>Experience</h2>
+
+  {experiences.map((experience) => <Experience experience={experience} />)}
+
+  <h2>Education</h2>
+
+  <h3>University of Illinois at Urbana-Champaign</h3>
+  <p>Bachelor of Science in Biochemistry</p>
+</PageLayout>

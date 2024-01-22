@@ -1,0 +1,65 @@
+---
+import dayjs from "dayjs";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  experience: CollectionEntry<"experience">;
+}
+
+const { experience } = Astro.props;
+const {
+  data: { title, organization, startDate, endDate },
+} = experience;
+
+const dateFormat = "MMM YYYY";
+const startDateStr = dayjs(startDate).add(12, "hour").format(dateFormat);
+const endDateStr = endDate
+  ? dayjs(endDate).add(12, "hour").format(dateFormat)
+  : "Present";
+
+const { Content } = await experience.render();
+---
+
+<article class="experience">
+  <section class="header">
+    <h3>{title} — {organization}</h3>
+
+    <h4 class="dates">
+      {startDateStr} – {endDateStr}
+    </h4>
+  </section>
+
+  <section class="work-details">
+    <Content />
+  </section>
+</article>
+
+<style>
+  @media (min-width: 621px) {
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dates {
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    .work-details {
+      /* ~80 characters per line, for optimal readability */
+      max-width: 40em;
+    }
+  }
+
+  @media (max-width: 620px) {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      margin-top: 0.2em;
+      margin-bottom: 0.5em;
+    }
+  }
+</style>

@@ -10,9 +10,6 @@ export const ResumeHeader: React.FC = () => (
       <p className="email">
         <a href="mailto:kai.b.yao@gmail.com">kai.b.yao@gmail.com</a>
       </p>
-      <p className="phone">
-        <a href="tel:630-788-0424">630.788.0424</a>
-      </p>
     </section>
   </header>
 );

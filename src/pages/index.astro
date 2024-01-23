@@ -13,12 +13,87 @@ experiences.sort(
 <PageLayout>
   <ResumeHeader />
 
-  <h2>Experience</h2>
+  <section class="content">
+    <section class="content--main">
+      <section class="experiences">
+        <h2>Experience</h2>
 
-  {experiences.map((experience) => <Experience experience={experience} />)}
+        {experiences.map((experience) => <Experience experience={experience} />)}
+      </section>
 
-  <h2>Education</h2>
+      <section class="education">
+        <h2>Education</h2>
+        <h3>University of Illinois at Urbana-Champaign</h3>
+        <p>Bachelor of Science in Biochemistry</p>
+      </section>
+    </section>
 
-  <h3>University of Illinois at Urbana-Champaign</h3>
-  <p>Bachelor of Science in Biochemistry</p>
+    <section class="content--skills">
+      <h2>Skills</h2>
+      <h4>Back-end</h4>
+      <ul>
+        <li>Java (Guice)</li>
+        <li>MySQL</li>
+        <li>Hibernate ORM</li>
+      </ul>
+      <h4>Front-end</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+      </ul>
+      <h4>Client/Server</h4>
+      <ul>
+        <li>GraphQL (Apollo)</li>
+        <li>WebSockets</li>
+        <li>Service Workers</li>
+        <li>REST</li>
+      </ul>
+      <h4>Infrastructure</h4>
+      <ul>
+        <li>Kubernetes</li>
+        <li>Docker</li>
+        <li>Helm</li>
+        <li>Terraform</li>
+        <li>Ansible</li>
+      </ul>
+    </section>
+  </section>
 </PageLayout>
+
+<style>
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content--main {
+    /* ~100 characters per line, for readability. 80em is optimal for readability, but harder to work with layout-wise. */
+    max-width: 45em;
+  }
+
+  .content--skills {
+    margin-left: 2em;
+    margin-right: 1em;
+  }
+  .content--skills h2 {
+    margin-bottom: 0;
+  }
+  .content--skills h4 {
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  .content--skills h2 + h4 {
+    margin-top: 1em;
+  }
+  .content--skills ul {
+    padding-left: 1em;
+    list-style-type: none;
+  }
+
+  @media (max-width: 540px) {
+    .content--skills {
+      display: none;
+    }
+  }
+</style>

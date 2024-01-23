@@ -21,7 +21,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## To dos
 
-* Page breaks when printing.
+* Print margins
 * Improve readability w/ a different font for paragraphs.
   * Sans-serif:
     * Lato (for capitalized titles + reading paragraphs)

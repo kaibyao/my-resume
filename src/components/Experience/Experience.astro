@@ -21,17 +21,17 @@ const { Content } = await experience.render();
 ---
 
 <article class="experience">
-  <section class="header">
-    <h3>{title} — {organization}</h3>
+  <div class="header">
+    <h3 class="title">{title} — {organization}</h3>
 
-    <h4 class="dates">
+    <h3 class="dates">
       {startDateStr} – {endDateStr}
-    </h4>
-  </section>
+    </h3>
+  </div>
 
-  <section class="work-details">
+  <div class="work-details">
     <Content />
-  </section>
+  </div>
 </article>
 
 <style>
@@ -45,16 +45,11 @@ const { Content } = await experience.render();
       align-self: flex-end;
       text-align: right;
     }
-
-    .work-details {
-      /* ~80 characters per line, for optimal readability */
-      max-width: 40em;
-    }
   }
 
   @media (max-width: 620px) {
     h3 {
-      margin-bottom: 0;
+      /* margin-bottom: 0; */
     }
 
     h4 {

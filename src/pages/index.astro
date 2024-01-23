@@ -30,18 +30,22 @@ experiences.sort(
 
     <section class="content--skills">
       <h2>Skills</h2>
+
+      <h4>Front-end</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Amplitude</li>
+      </ul>
+
       <h4>Back-end</h4>
       <ul>
         <li>Java (Guice)</li>
         <li>MySQL</li>
         <li>Hibernate ORM</li>
       </ul>
-      <h4>Front-end</h4>
-      <ul>
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-      </ul>
+
       <h4>Client/Server</h4>
       <ul>
         <li>GraphQL (Apollo)</li>
@@ -49,6 +53,15 @@ experiences.sort(
         <li>Service Workers</li>
         <li>REST</li>
       </ul>
+
+      <h4>Testing</h4>
+      <ul>
+        <li>Jest</li>
+        <li><code>testing-library</code></li>
+        <li>JUnit</li>
+        <li>Selenium</li>
+      </ul>
+
       <h4>Infrastructure</h4>
       <ul>
         <li>Kubernetes</li>
@@ -56,6 +69,7 @@ experiences.sort(
         <li>Helm</li>
         <li>Terraform</li>
         <li>Ansible</li>
+        <li>Prometheus</li>
       </ul>
     </section>
   </section>
@@ -94,6 +108,12 @@ experiences.sort(
   @media (max-width: 540px) {
     .content--skills {
       display: none;
+    }
+  }
+
+  @media print {
+    .content--main {
+      max-width: 40em;
     }
   }
 </style>

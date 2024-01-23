@@ -143,12 +143,17 @@
       --foreground-color: black;
     }
 
+    @page {
+      /** Only applies in Chrome when using "Default" margin settings */
+      margin: 0.25in 0.5in;
+    }
+
     html {
       font-size: 10pt;
     }
 
     body {
-      margin-top: 0
+      margin: 0
     }
 
     main {
@@ -156,11 +161,15 @@
     }
 
     h1 {
-      margin-left: 0;
+      margin-top: 0.5em;
     }
 
     a {
       text-decoration: none;
+    }
+
+    li {
+      break-inside: avoid;
     }
   }
 </style>

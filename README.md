@@ -21,19 +21,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## To dos
 
-* Improve readability w/ a different font for paragraphs.
-  * Sans-serif:
-    * Lato (for capitalized titles + reading paragraphs)
-    * Noto Sans
-    * Open Sans
-    * Poppins (for capitalized titles)
-    * Montserrat (for capitalized titles)
-  * Serif:
-    * Lora
-    * Noto serif
-    * Merriweather
-    * Georgia
-    * Bookerly
+* Deploy to github pages.
 * Highlight technologies used per job responsibility.
 * Dark vs light mode toggle.
 * Collapsible experiences.

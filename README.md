@@ -21,7 +21,6 @@ All commands are run from the root of the project, from a terminal:
 
 ## To dos
 
-* Deploy to github pages.
 * Highlight technologies used per job responsibility.
 * Dark vs light mode toggle.
 * Collapsible experiences.

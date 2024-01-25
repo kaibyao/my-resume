@@ -1,12 +1,12 @@
 View this app at: [https://kaibyao.github.io/my-resume](https://kaibyao.github.io/my-resume).
 
-# My Resumé
+# My Résumé
 
-Once upon a time, people (myself included) wrote their resumés using an application called Microsoft Word. These days, I rarely use Word and don’t have it installed on any of my machines.
+Once upon a time, people (myself included) wrote their résumés using an application called Microsoft Word. These days, I rarely use Word and don’t have it installed on any of my machines.
 
-At some point I had converted my resumé to the Adobe Illustrator (and later Affinity Designer) format, but found that as I stopped using Illustrator day-to-day, my muscle memory of its actions faded and I had a harder time editing previous job experiences + adding new ones. I also found that it’s not actually that great of a tool when the main thing I needed to do was edit text.
+At some point I had converted my résumé to the Adobe Illustrator (and later Affinity Designer) format, but found that as I stopped using Illustrator day-to-day, my muscle memory of its actions faded and I had a harder time editing previous job experiences + adding new ones. I also found that it’s not actually that great of a tool when the main thing I needed to do was edit text.
 
-Now, given how far we’ve come with web frameworks and that I will probably always be writing web applications as my day job, why not convert my resumé to code? This repo houses my current resumé, built on [React](https://react.dev/) + [Astro](https://astro.build/). Astro makes it easy to edit textual information in [Markdown (MDX)](https://mdxjs.com/), while still allowing for the sprinkles of UI customization that I need.
+Now, given how far we’ve come with web frameworks and that I will probably always be writing web applications as my day job, why not convert my résumé to code? This repo houses my current résumé, built on [React](https://react.dev/) + [Astro](https://astro.build/). Astro makes it easy to edit textual information in [Markdown (MDX)](https://mdxjs.com/), while still allowing for the sprinkles of UI customization that I need.
 
 ## 🧞 Astro Commands
 

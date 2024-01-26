@@ -1,0 +1,11 @@
+.skills-title {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+.skills-title:first-of-type {
+  margin-top: 1em;
+}
+.skills-list {
+  padding-left: 1em;
+  list-style-type: none;
+}

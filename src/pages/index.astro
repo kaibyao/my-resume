@@ -1,17 +1,18 @@
 ---
-import { ResumeHeader } from "../components/ResumeHeader/ResumeHeader";
+import PageLayout from "../layouts/Page.astro";
 import { Experience } from "../components/Experience/Experience";
 import type { Props as ExperienceProps } from "../components/Experience/Experience";
-import PageLayout from "../layouts/Page.astro";
+import { ResumeHeader } from "../components/ResumeHeader/ResumeHeader";
+import { Skills } from "../components/Skills/Skills";
 
 const globs = await Astro.glob<Omit<ExperienceProps, "html">>(
   "../content/experience/*.md",
 );
-const experiencesMarkdown = globs.map((glob) => ({
+const experiences = globs.map((glob) => ({
   ...glob.frontmatter,
   html: glob.compiledContent(),
 }));
-experiencesMarkdown.sort(
+experiences.sort(
   (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
 );
 ---
@@ -25,7 +26,7 @@ experiencesMarkdown.sort(
         <h2>Experience</h2>
 
         {
-          experiencesMarkdown.map((experience) => (
+          experiences.map((experience) => (
             <Experience client:load {...experience} />
           ))
         }
@@ -41,47 +42,47 @@ experiencesMarkdown.sort(
     <section class="content--skills">
       <h2>Skills</h2>
 
-      <h4>Front-end</h4>
-      <ul>
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>Amplitude</li>
-      </ul>
+      <Skills
+        title="Front-end"
+        skillNames={["TypeScript", "React", "Node.js", "Amplitude"]}
+      />
 
-      <h4>Back-end</h4>
-      <ul>
-        <li>Java (Guice)</li>
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-        <li>Hibernate ORM</li>
-      </ul>
+      <Skills
+        title="Back-end"
+        skillNames={["Java (Guice)", "MySQL", "PostgreSQL", "Hibernate ORM"]}
+      />
 
-      <h4>Client/Server</h4>
-      <ul>
-        <li>GraphQL (Apollo)</li>
-        <li>WebSockets</li>
-        <li>Service Workers</li>
-        <li>REST</li>
-      </ul>
+      <Skills
+        title="Server/Client"
+        skillNames={[
+          "GraphQL (Apollo)",
+          "WebSockets",
+          "Service Workers",
+          "REST",
+        ]}
+      />
 
-      <h4>Testing</h4>
-      <ul>
-        <li>Jest</li>
-        <li><code>testing-library</code></li>
-        <li>JUnit</li>
-        <li>Selenium</li>
-      </ul>
+      <Skills
+        title="Testing"
+        skillNames={[
+          "Jest",
+          "testing-library",
+          "JUnit",
+          "Selenium",
+        ]}
+      />
 
-      <h4>Infrastructure</h4>
-      <ul>
-        <li>Kubernetes</li>
-        <li>Docker</li>
-        <li>Helm</li>
-        <li>Terraform</li>
-        <li>Ansible</li>
-        <li>Prometheus</li>
-      </ul>
+      <Skills
+        title="Infrastructure"
+        skillNames={[
+          "Kubernetes",
+          "Docker",
+          "Helm",
+          "Terraform",
+          "Ansible",
+          "Prometheus",
+        ]}
+      />
     </section>
   </section>
 </PageLayout>
@@ -108,17 +109,6 @@ experiencesMarkdown.sort(
   }
   .content--skills h2 {
     margin-bottom: 0;
-  }
-  .content--skills h4 {
-    margin-top: 2em;
-    margin-bottom: 0;
-  }
-  .content--skills h2 + h4 {
-    margin-top: 1em;
-  }
-  .content--skills ul {
-    padding-left: 1em;
-    list-style-type: none;
   }
 
   @media (max-width: 540px) {

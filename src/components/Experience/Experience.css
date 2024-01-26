@@ -1,0 +1,27 @@
+@media (min-width: 621px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dates {
+    align-self: flex-end;
+    text-align: right;
+  }
+}
+
+@media (max-width: 620px) {
+  h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+  }
+
+  .work-details {
+    padding-bottom: 0.5em;
+  }
+
+  .dates {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+}

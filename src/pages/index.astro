@@ -1,12 +1,18 @@
 ---
-import { getCollection } from "astro:content";
 import { ResumeHeader } from "../components/ResumeHeader/ResumeHeader";
-import Experience from "../components/Experience/Experience.astro";
+import { Experience } from "../components/Experience/Experience";
+import type { Props as ExperienceProps } from "../components/Experience/Experience";
 import PageLayout from "../layouts/Page.astro";
 
-const experiences = await getCollection("experience");
-experiences.sort(
-  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
+const globs = await Astro.glob<Omit<ExperienceProps, "html">>(
+  "../content/experience/*.md",
+);
+const experiencesMarkdown = globs.map((glob) => ({
+  ...glob.frontmatter,
+  html: glob.compiledContent(),
+}));
+experiencesMarkdown.sort(
+  (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
 );
 ---
 
@@ -18,7 +24,11 @@ experiences.sort(
       <section class="experiences">
         <h2>Experience</h2>
 
-        {experiences.map((experience) => <Experience experience={experience} />)}
+        {
+          experiencesMarkdown.map((experience) => (
+            <Experience client:load {...experience} />
+          ))
+        }
       </section>
 
       <section class="education">

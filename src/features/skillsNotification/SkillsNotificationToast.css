@@ -1,0 +1,27 @@
+.skills-notification-toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  left: 1rem;
+
+  padding: 0.75rem 1rem;
+
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 4px;
+
+  opacity: 0;
+  transform: translateY(calc(-100% - 1rem));
+  transition: all 250ms ease-in-out;
+}
+
+.skills-notification-toast--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (min-width: 621px) {
+  .skills-notification-toast {
+    display: none;
+  }
+}

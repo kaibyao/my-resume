@@ -32,7 +32,7 @@ import faviconImage from '../images/favicon.svg';
   :root {
     --background-color: #13151a;
     --foreground-color: white;
-    --link-color: lightblue;
+    --link-color: hsl(185, 100%, 50%);
   }
 
   html {
@@ -56,10 +56,11 @@ import faviconImage from '../images/favicon.svg';
   }
 
   a {
-    color: var(--foreground-color);
+    color: var(--link-color);
+    text-decoration: none;
   }
   a:hover {
-    color: var(--link-color);
+    text-decoration: underline;
   }
 
   main {
@@ -101,6 +102,10 @@ import faviconImage from '../images/favicon.svg';
     margin-top: 1em;
     margin-bottom: 0.2em;
   }
+  h2 + h3 {
+    margin-top: 0.5em;
+  }
+
   h4 {
     font-weight: 700;
   }
@@ -132,6 +137,10 @@ import faviconImage from '../images/favicon.svg';
     html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    .print-only {
+      display: none;
     }
   }
 
@@ -168,6 +177,10 @@ import faviconImage from '../images/favicon.svg';
 
     li {
       break-inside: avoid;
+    }
+
+    .screen-only {
+      display: none;
     }
   }
 </style>

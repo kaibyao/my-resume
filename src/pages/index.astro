@@ -1,93 +1,90 @@
 ---
-import PageLayout from "../layouts/Page.astro";
-import { Experience } from "../components/Experience/Experience";
-import type { Props as ExperienceProps } from "../components/Experience/Experience";
-import { ExperienceSkillsNotificationProvider } from "../components/contexts/ExperienceSkillsNotificationContext/ExperienceSkillsNotificationContext";
-import { ResumeHeader } from "../components/ResumeHeader/ResumeHeader";
-import { Skills } from "../components/Skills/Skills";
+import { getCollection } from "astro:content";
+import PageLayout from "~/layouts/Page.astro";
+import Experience from "~/components/Experience/Experience.astro";
+import { ResumeHeader } from "~/components/ResumeHeader/ResumeHeader";
+import { SkillsList } from "~/components/SkillsList/SkillsList";
+import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue"
+import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast"
 
-const globs = await Astro.glob<Omit<ExperienceProps, "html">>(
-  "../content/experience/*.md",
-);
-const experiences = globs.map((glob) => ({
-  ...glob.frontmatter,
-  html: glob.compiledContent(),
-}));
+const experiences = await getCollection("experience");
 experiences.sort(
-  (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
 );
 ---
 
 <PageLayout>
   <ResumeHeader />
 
+  <SkillsNotificationQueue client:only />
+
   <section class="content">
-    <ExperienceSkillsNotificationProvider client:load>
-      <section class="content--main">
-        <section class="experiences">
-          <h2>Experience</h2>
+    <section class="content--main">
+      <section class="experiences">
+        <h2>Experience</h2>
 
-          {
-            experiences.map((experience) => (
-              <Experience client:load {...experience} />
-            ))
-          }
-        </section>
-
-        <section class="education">
-          <h2>Education</h2>
-          <h3>University of Illinois at Urbana-Champaign</h3>
-          <p>Bachelor of Science in Biochemistry</p>
-        </section>
+        {
+          experiences.map((experience) => (
+            <Experience experience={experience} />
+          ))
+        }
       </section>
 
-      <section class="content--skills">
-        <h2>Skills</h2>
-
-        <Skills
-          client:load
-          title="Front-end"
-          skillNames={["TypeScript", "React", "Node.js", "Amplitude"]}
-        />
-
-        <Skills
-          client:load
-          title="Back-end"
-          skillNames={["Java (Guice)", "MySQL", "PostgreSQL", "Hibernate ORM"]}
-        />
-
-        <Skills
-          client:load
-          title="Server/Client"
-          skillNames={[
-            "GraphQL (Apollo)",
-            "WebSockets",
-            "Service Workers",
-            "REST",
-          ]}
-        />
-
-        <Skills
-          client:load
-          title="Testing"
-          skillNames={["Jest", "testing-library", "JUnit", "Selenium"]}
-        />
-
-        <Skills
-          client:load
-          title="Infrastructure"
-          skillNames={[
-            "Kubernetes",
-            "Docker",
-            "Helm",
-            "Terraform",
-            "Ansible",
-            "Prometheus",
-          ]}
-        />
+      <section class="education">
+        <h2>Education</h2>
+        <h3>University of Illinois at Urbana-Champaign</h3>
+        <p>Bachelor of Science in Biochemistry</p>
       </section>
-    </ExperienceSkillsNotificationProvider>
+    </section>
+
+    <section class="content--skills">
+      <h2>Skills</h2>
+
+      <SkillsList
+        client:load
+        title="Front-end"
+        skillNames={["TypeScript", "React", "Node.js", "Next.js"]}
+      />
+
+      <SkillsList
+        client:load
+        title="Back-end"
+        skillNames={["Java (Guice)", "MySQL", "Redis", "Hibernate ORM"]}
+      />
+
+      <SkillsList
+        client:load
+        title="Server/Client"
+        skillNames={[
+          "GraphQL (Apollo)",
+          "WebSockets",
+          "Service Workers",
+          "REST",
+        ]}
+      />
+
+      <SkillsList
+        client:load
+        title="Testing"
+        skillNames={["Jest", "testing-library", "JUnit", "Selenium"]}
+      />
+
+      <SkillsList
+        client:load
+        title="Infrastructure"
+        skillNames={[
+          "Kubernetes",
+          "Docker",
+          "Helm",
+          "Terraform",
+          "Ansible",
+          "Prometheus",
+        ]}
+      />
+    </section>
   </section>
+
+  <SkillsNotificationToast client:only />
 </PageLayout>
 
 <style>

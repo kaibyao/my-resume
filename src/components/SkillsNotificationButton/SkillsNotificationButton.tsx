@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import { enqueueSkillsToNotificationQueueAtom } from "~/features/skillsNotification/skillsNotificationStore";
-import "./SkillsNotificationButton.css";
 import { SKILLS_NOTIFICATION_DURATION } from "~/features/skillsNotification/skillsNotificationConstants";
+import "./SkillsNotificationButton.css";
 
 interface Props {
   skills: string[];

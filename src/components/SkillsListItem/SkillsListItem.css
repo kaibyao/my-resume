@@ -18,3 +18,9 @@
     color: inherit;
   }
 }
+
+@media print {
+  .skill-highlight {
+    color: inherit !important;
+  }
+}

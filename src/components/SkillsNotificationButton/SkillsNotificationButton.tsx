@@ -1,7 +1,6 @@
 import { useAtom } from "jotai";
 import { enqueueSkillsToNotificationQueueAtom } from "~/features/skillsNotification/skillsNotificationStore";
 import { SKILLS_NOTIFICATION_DURATION } from "~/features/skillsNotification/skillsNotificationConstants";
-import styles from "./SkillsNotificationButton.module.css";
 
 interface Props {
   skills: string[];
@@ -21,7 +20,10 @@ export const SkillsNotificationButton: React.FC<Props> = ({ skills }) => {
   };
 
   return (
-    <button className={styles.skillsNotificationButton} onClick={handleClick}>
+    <button
+      className="skills-notification-button screen-only"
+      onClick={handleClick}
+    >
       Skills
     </button>
   );

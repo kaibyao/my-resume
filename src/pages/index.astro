@@ -7,10 +7,13 @@ import { SkillsList } from "~/components/SkillsList/SkillsList";
 import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue"
 import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast"
 
+import "~/components/SkillsNotificationButton/SkillsNotificationButton.css";
+
 const experiences = await getCollection("experience");
 experiences.sort(
   (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
 );
+
 ---
 
 <PageLayout>

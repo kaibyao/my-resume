@@ -1,4 +1,4 @@
-.skillsNotificationButton {
+.skills-notification-button {
   margin: 0 0.5em;
   padding: 0;
 
@@ -12,6 +12,6 @@
   cursor: pointer;
 }
 
-.skillsNotificationButton:hover {
+.skills-notification-button:hover {
   text-decoration: underline;
 }

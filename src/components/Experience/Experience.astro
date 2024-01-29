@@ -8,7 +8,7 @@ interface Props {
 
 const { experience } = Astro.props;
 const {
-  data: { title, organization, startDate, endDate },
+  data: { title, organization, organizationUrl, startDate, endDate },
 } = experience;
 
 const dateFormat = "MMM YYYY";
@@ -22,7 +22,10 @@ const { Content } = await experience.render();
 
 <article class="experience">
   <div class="header">
-    <h3 class="title">{title} — {organization}</h3>
+    <h3 class="title">
+      {title} —&nbsp;
+      <a href={organizationUrl} target="_blank" rel="noreferrer">{organization}</a>
+    </h3>
 
     <h3 class="dates">
       {startDateStr} – {endDateStr}

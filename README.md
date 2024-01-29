@@ -23,8 +23,5 @@ All commands are run from the root of the project, from a terminal:
 
 ## To dos
 
-* Highlight technologies used per job responsibility.
-* react-a11y / address accessibility.
-* Links for companies.
 * Dark vs light mode toggle.
 * Collapsible experiences.

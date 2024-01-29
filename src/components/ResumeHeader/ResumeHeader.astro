@@ -1,0 +1,66 @@
+<header>
+  <section class="header-title-area">
+    <h1 class="name">Kai Yao</h1>
+    <p class="job-title">Senior Software Engineer</p>
+  </section>
+  <section class="contact-info">
+    <p class="email">
+      <a href="mailto:kai.b.yao@gmail.com">kai.b.yao@gmail.com</a>
+    </p>
+  </section>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--foreground-color);
+  }
+
+  .header-title-area {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  /* To get name + title to align */
+  .name,
+  .job-title {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .job-title {
+    margin-left: 1em;
+
+    position: relative;
+    bottom: 3.4pt;
+
+    font-weight: 500;
+  }
+
+  .contact-info {
+    align-self: flex-end;
+    position: relative;
+    bottom: 0.15em;
+  }
+
+  .email {
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  @media (max-width: 500px) {
+    .job-title {
+      display: none;
+    }
+  }
+
+  @media print {
+    .job-title {
+      bottom: 2.1pt;
+    }
+  }
+</style>

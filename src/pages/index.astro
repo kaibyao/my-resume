@@ -2,12 +2,13 @@
 import { getCollection } from "astro:content";
 import PageLayout from "~/layouts/Page.astro";
 import Experience from "~/components/Experience/Experience.astro";
-import { ResumeHeader } from "~/components/ResumeHeader/ResumeHeader";
+import ResumeHeader from "~/components/ResumeHeader/ResumeHeader.astro";
 import { SkillsList } from "~/components/SkillsList/SkillsList";
 import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue"
 import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast"
 
-import "~/components/SkillsNotificationButton/SkillsNotificationButton.css";
+// This import is needed here because importing styles doesn't work if the component is being rendered inside of .mdx files.
+import "~/features/skillsNotification/SkillsNotificationButton.css";
 
 const experiences = await getCollection("experience");
 experiences.sort(

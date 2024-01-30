@@ -39,6 +39,7 @@ export const SkillsNotificationToast: React.FC = () => {
         if (delayHideSkillsTimeoutId === -1) {
           // Extend toast for 2 more seconds than standard before disappearing
           setDelayHideSkillsTimeoutId(
+            // the animation takes 250ms, and we want the duration of the toast to be 2 extra seconds vs when skills disappear from the queue.
             setTimeout(() => setIsDisplayed(false), 1750),
           );
         }

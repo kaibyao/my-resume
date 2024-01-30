@@ -24,4 +24,3 @@ All commands are run from the root of the project, from a terminal:
 ## To dos
 
 * Dark vs light mode toggle.
-* Collapsible experiences.

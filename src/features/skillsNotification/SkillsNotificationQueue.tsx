@@ -15,8 +15,8 @@ export const SkillsNotificationQueue: React.FC<Props> = ({ debug }) => {
   return debug ? (
     <div>
       {skills.map((skill) => (
-        <div key={`${skill.skillName}-${skill.endsAfter}`}>
-          {skill.skillName}: {skill.endsAfter}
+        <div key={`${skill.skillName}-${skill.type}-${skill.type === 'expiring' ? skill.endsAfter : 'perpetual'}`}>
+          {skill.skillName}: {skill.type === 'expiring' ? skill.endsAfter : 'perpetual'}
         </div>
       ))}
     </div>

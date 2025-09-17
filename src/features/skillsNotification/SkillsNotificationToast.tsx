@@ -6,7 +6,15 @@ import clsx from "clsx";
 
 export const SkillsNotificationToast: React.FC = () => {
   const [skills] = useAtom(skillsNotificationQueueAtom);
-  const skillsDeduped = useMemo(() => [...new Set(skills)], [skills]);
+  const skillsDeduped = useMemo(() => {
+    const seen = new Map();
+    return skills.filter(skill => {
+      const key = skill.skillName;
+      if (seen.has(key)) return false;
+      seen.set(key, true);
+      return true;
+    });
+  }, [skills]);
   const [delayHideSkillsTimeoutId, setDelayHideSkillsTimeoutId] = useState<NodeJS.Timeout | number>(-1);
   const [displayedSkills, setDisplayedSkills] = useState(skillsDeduped);
   const [isDisplayed, setIsDisplayed] = useState(false); // hide before skills disappear
@@ -45,11 +53,19 @@ export const SkillsNotificationToast: React.FC = () => {
         }
       } else {
         // Only show the most recent skill notifications (older ones that are still active shouldn't display)
-        const lastSkillNotificationTimestamp =
-          skillsDeduped[skillsDeduped.length - 1]?.endsAfter;
+        const lastSkill = skillsDeduped[skillsDeduped.length - 1];
+        const lastSkillNotificationTimestamp = lastSkill?.type === 'expiring'
+          ? lastSkill.endsAfter
+          : null;
+
         const mostRecentSkillNotifications = skillsDeduped.filter(
-          (animatingSkill) =>
-            animatingSkill.endsAfter === lastSkillNotificationTimestamp,
+          (animatingSkill) => {
+            if (lastSkillNotificationTimestamp === null) {
+              // If the last skill is perpetual, show all perpetual skills
+              return animatingSkill.type === 'perpetual';
+            }
+            return animatingSkill.type === 'expiring' && animatingSkill.endsAfter === lastSkillNotificationTimestamp;
+          }
         );
 
         if (

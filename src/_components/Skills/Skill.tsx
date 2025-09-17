@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { useAtom } from "jotai";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { skillsNotificationQueueAtom } from "~/features/skillsNotification/skillsNotificationStore";
 
-export const SkillItem: React.FC<{ skillName: string }> = ({ skillName }) => {
+export const Skill: React.FC<{ skillName: string }> = ({ skillName }) => {
   const elementRef = useRef<HTMLSpanElement>(null);
   const [
     lastSkillNotificationTimestampState,
@@ -16,33 +16,53 @@ export const SkillItem: React.FC<{ skillName: string }> = ({ skillName }) => {
   );
   const isSkillHighlighted = matchingActiveSkillNotifications.length > 0;
 
+  // Determine if we have any perpetual skills for this skillName
+  const hasPerpetualSkill = matchingActiveSkillNotifications.some(
+    (skill) => skill.type === "perpetual",
+  );
+
   if (matchingActiveSkillNotifications.length > 0) {
     // Replay the highlight animation if skill has been highlighted twice in succession.
     const lastSkillNotificationTimestamp =
       matchingActiveSkillNotifications[
         matchingActiveSkillNotifications.length - 1
       ];
+
+    const timestampToUse =
+      lastSkillNotificationTimestamp?.type === "expiring"
+        ? lastSkillNotificationTimestamp.endsAfter
+        : Date.now(); // Use current time for perpetual skills
+
     if (
-      lastSkillNotificationTimestamp?.endsAfter &&
       elementRef.current &&
-      lastSkillNotificationTimestampState !==
-        lastSkillNotificationTimestamp.endsAfter
+      lastSkillNotificationTimestampState !== timestampToUse
     ) {
       for (const animation of elementRef.current.getAnimations()) {
         animation.cancel();
         animation.play();
       }
-      setLastSkillNotificationTimestamp(
-        lastSkillNotificationTimestamp.endsAfter,
-      );
+      setLastSkillNotificationTimestamp(timestampToUse);
     }
   }
+
+  // Cancel animations when skill becomes unhighlighted
+  useEffect(() => {
+    if (!isSkillHighlighted && elementRef.current) {
+      for (const animation of elementRef.current.getAnimations()) {
+        animation.cancel();
+      }
+    }
+  }, [isSkillHighlighted]);
 
   return (
     <span
       className={clsx(
         "skill-item",
-        isSkillHighlighted ? "skill-highlight" : undefined,
+        isSkillHighlighted
+          ? hasPerpetualSkill
+            ? "skill-highlight--perpetual"
+            : "skill-highlight--expiring"
+          : undefined,
       )}
       ref={elementRef}
     >

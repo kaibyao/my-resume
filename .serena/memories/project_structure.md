@@ -11,8 +11,6 @@ src/
 ├── _components/          # Reusable UI components
 │   ├── Experience/     # Job experience display
 │   ├── ResumeHeader/   # Resume header section
-│   ├── SkillsList/     # Skills list component
-│   └── SkillsListItem/ # Individual skill item
 ├── content/            # Content collections
 │   ├── config.ts       # Content schema definitions
 │   └── experience/     # MDX files for job experiences

@@ -48,7 +48,8 @@ experiences.sort(
     z-index: 100;
     background: var(--background-color);
 
-    transition: box-shadow 0.2s ease-in-out;
+    /* Prevent scroll jitter */
+    border-bottom: 1px solid transparent;
   }
 
   .sticky-header.scrolled {

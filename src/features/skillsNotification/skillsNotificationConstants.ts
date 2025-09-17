@@ -1,2 +1,2 @@
-// Matches with the keyframe duration in SkillsListItem.
-export const SKILLS_NOTIFICATION_DURATION = 15_000;
+// Matches with the keyframe duration in SkillsNotificationButton.
+export const SKILLS_NOTIFICATION_DURATION = 5_000;

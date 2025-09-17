@@ -1,5 +1,8 @@
 import { useAtom } from "jotai";
-import { enqueueSkillsToNotificationQueueAtom } from "~/features/skillsNotification/skillsNotificationStore";
+import {
+  enqueueSkillsToNotificationQueueAtom,
+  startSkillsExpirationAtom,
+} from "~/features/skillsNotification/skillsNotificationStore";
 import { SKILLS_NOTIFICATION_DURATION } from "~/features/skillsNotification/skillsNotificationConstants";
 
 interface Props {
@@ -8,15 +11,20 @@ interface Props {
 
 export const SkillsNotificationButton: React.FC<Props> = ({ skills }) => {
   const [, enqueueSkills] = useAtom(enqueueSkillsToNotificationQueueAtom);
+  const [, startExpiration] = useAtom(startSkillsExpirationAtom);
 
   const handleHighlightSkills = () => {
-    const expirationTimestamp = Date.now() + SKILLS_NOTIFICATION_DURATION;
-    enqueueSkills([
-      ...skills.map((skill) => ({
+    enqueueSkills(
+      skills.map((skill) => ({
+        type: "perpetual" as const,
         skillName: skill,
-        endsAfter: expirationTimestamp,
       })),
-    ]);
+    );
+  };
+
+  const handleStartExpiration = () => {
+    const expirationTimestamp = Date.now() + SKILLS_NOTIFICATION_DURATION;
+    startExpiration(expirationTimestamp);
   };
 
   return (
@@ -24,6 +32,7 @@ export const SkillsNotificationButton: React.FC<Props> = ({ skills }) => {
       className="skills-notification-button screen-only"
       onClick={handleHighlightSkills}
       onMouseEnter={handleHighlightSkills}
+      onMouseLeave={handleStartExpiration}
     >
       Skills
     </button>

@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import "./Skills.css";
 import { useRequestAnimationFrame } from "~/_hooks/useRequestAnimationFrame";
 import { skillGroups } from "~/_components/Skills/skill-groups";
-import { SkillItem } from "~/_components/Skills/Skill";
+import { Skill } from "~/_components/Skills/Skill";
 
 export const Skills: React.FC = () => {
   const updateStickyClasses = useCallback(() => {
@@ -44,7 +44,7 @@ const SkillGroup: React.FC<SkillGroupProps> = ({ title, skillNames }) => {
       <strong>{title}:</strong>{" "}
       {skillNames.map((skillName, index) => (
         <span key={skillName}>
-          <SkillItem skillName={skillName} />
+          <Skill skillName={skillName} />
           {index < skillNames.length - 1 && ", "}
         </span>
       ))}

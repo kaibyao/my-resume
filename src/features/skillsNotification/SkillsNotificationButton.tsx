@@ -9,7 +9,7 @@ interface Props {
 export const SkillsNotificationButton: React.FC<Props> = ({ skills }) => {
   const [, enqueueSkills] = useAtom(enqueueSkillsToNotificationQueueAtom);
 
-  const handleClick = () => {
+  const handleHighlightSkills = () => {
     const expirationTimestamp = Date.now() + SKILLS_NOTIFICATION_DURATION;
     enqueueSkills([
       ...skills.map((skill) => ({
@@ -22,7 +22,8 @@ export const SkillsNotificationButton: React.FC<Props> = ({ skills }) => {
   return (
     <button
       className="skills-notification-button screen-only"
-      onClick={handleClick}
+      onClick={handleHighlightSkills}
+      onMouseEnter={handleHighlightSkills}
     >
       Skills
     </button>

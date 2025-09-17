@@ -11,11 +11,10 @@ export const skillsNotificationQueueAtom = atom<AnimatingSkill[]>([]);
 
 export const enqueueSkillsToNotificationQueueAtom = atom(
   null,
-  (get, set, newSkills: AnimatingSkill[]) => {
-    const currentlyQueuedSkills = get(skillsNotificationQueueAtom);
-    set(skillsNotificationQueueAtom, [...currentlyQueuedSkills, ...newSkills]);
+  (_get, set, newSkills: AnimatingSkill[]) => {
+    set(skillsNotificationQueueAtom, newSkills);
   },
-);
+);;
 
 export const skillsNotificationExpirationEffectAtom = atomEffect((get, set) => {
   const intervalId = setInterval(() => {

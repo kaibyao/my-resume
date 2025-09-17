@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "~/layouts/Page.astro";
-import Experience from "~/components/Experience/Experience.astro";
-import ResumeHeader from "~/components/ResumeHeader/ResumeHeader.astro";
-import { Skills } from "~/components/Skills/Skills";
+import Experience from "~/_components/Experience/Experience.astro";
+import ResumeHeader from "~/_components/ResumeHeader/ResumeHeader.astro";
+import { Skills } from "~/_components/Skills/Skills";
 import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue";
 import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast";
 
@@ -17,13 +17,14 @@ experiences.sort(
 ---
 
 <PageLayout>
-  <ResumeHeader />
+  <div class="sticky-header">
+    <ResumeHeader />
+    <Skills client:load />
+  </div>
 
   <SkillsNotificationQueue client:only />
 
   <section class="content">
-    <Skills client:load />
-
     <section class="experiences">
       <h2>Experience</h2>
 
@@ -41,6 +42,31 @@ experiences.sort(
 </PageLayout>
 
 <style>
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--background-color);
+
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .sticky-header.scrolled {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #999;
+  }
+
+  @media print {
+    .sticky-header {
+      position: static;
+    }
+
+    .sticky-header.scrolled {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
   .content {
     margin-left: 0.75rem;
     margin-right: 0.75rem;

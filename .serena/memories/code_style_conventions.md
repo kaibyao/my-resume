@@ -7,7 +7,7 @@
 - Path alias: `~/*` maps to `src/*`
 
 ## File Organization
-- Components in `src/components/ComponentName/` folders
+- Components in `src/_components/ComponentName/` folders
 - Each component has `.astro/.tsx` file and `.css` file
 - Content in `src/content/experience/` as MDX files
 - Pages in `src/pages/` as Astro files

@@ -8,7 +8,7 @@
 ## Source Directory (`src/`)
 ```
 src/
-├── components/          # Reusable UI components
+├── _components/          # Reusable UI components
 │   ├── Experience/     # Job experience display
 │   ├── ResumeHeader/   # Resume header section
 │   ├── SkillsList/     # Skills list component

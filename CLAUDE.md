@@ -27,7 +27,7 @@ This is an Astro static site with React components for a personal resume website
 ## Code Conventions
 
 - **TypeScript**: Strict mode enabled via `astro/tsconfigs/strictest` - never use `any` type
-- **Component Organization**: Each component in `src/components/ComponentName/` with co-located CSS file
+- **Component Organization**: Each component in `src/_components/ComponentName/` with co-located CSS file
 - **Content Schema**: New experience entries must match Zod schema in `src/content/config.ts`
 - **Naming**: PascalCase for components, camelCase for functions/variables, kebab-case for files
 

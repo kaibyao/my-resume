@@ -4,8 +4,8 @@ import PageLayout from "~/layouts/Page.astro";
 import Experience from "~/components/Experience/Experience.astro";
 import ResumeHeader from "~/components/ResumeHeader/ResumeHeader.astro";
 import { SkillsList } from "~/components/SkillsList/SkillsList";
-import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue"
-import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast"
+import { SkillsNotificationQueue } from "~/features/skillsNotification/SkillsNotificationQueue";
+import { SkillsNotificationToast } from "~/features/skillsNotification/SkillsNotificationToast";
 
 // This import is needed here because importing styles doesn't work if the component is being rendered inside of .mdx files.
 import "~/features/skillsNotification/SkillsNotificationButton.css";
@@ -14,7 +14,6 @@ const experiences = await getCollection("experience");
 experiences.sort(
   (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime(),
 );
-
 ---
 
 <PageLayout>
@@ -46,22 +45,36 @@ experiences.sort(
 
       <SkillsList
         client:load
+        title="AI"
+        skillNames={["Claude Code", "Cursor AI", "OpenAI"]}
+      />
+
+      <SkillsList
+        client:load
         title="Front-end"
-        skillNames={["TypeScript", "React", "Node.js", "Next.js"]}
+        skillNames={["TypeScript", "React", "Next.js"]}
       />
 
       <SkillsList
         client:load
         title="Back-end"
-        skillNames={["Java (Guice)", "MySQL", "Redis", "Hibernate ORM"]}
+        skillNames={[
+          "Node.js",
+          "NestJS",
+          "PostgreSQL",
+          "Redis",
+          "Java + Hibernate",
+          "MySQL",
+          "Hibernate ORM",
+        ]}
       />
 
       <SkillsList
         client:load
         title="Server/Client"
         skillNames={[
-          "GraphQL (Apollo)",
           "WebSockets",
+          "GraphQL (Apollo)",
           "Service Workers",
           "REST",
         ]}
@@ -70,19 +83,30 @@ experiences.sort(
       <SkillsList
         client:load
         title="Testing"
-        skillNames={["Jest", "testing-library", "JUnit", "Selenium"]}
+        skillNames={[
+          "Jest",
+          "testing-library",
+          "vitest",
+          "Playwright",
+          "JUnit",
+          "Selenium",
+        ]}
       />
 
       <SkillsList
         client:load
         title="Infrastructure"
         skillNames={[
-          "Kubernetes",
-          "Docker",
-          "Helm",
           "Terraform",
+          "Docker",
+          "Github Actions / CI+CD",
+          "Amazon AWS",
+          "Datadog",
+          "Kubernetes",
+          "Helm",
           "Ansible",
           "Prometheus",
+          "Google Cloud",
         ]}
       />
     </section>

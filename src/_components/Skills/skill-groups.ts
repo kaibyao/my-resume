@@ -10,7 +10,9 @@ export const skillGroups = [
   {
     title: "Back-end",
     skillNames: [
+      "Microservices",
       "Node.js",
+      "NATS + Jetstream",
       "NestJS",
       "PostgreSQL",
       "Redis",

@@ -25,7 +25,7 @@
 }
 
 .skill-highlight--expiring {
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-name: skill-highlight;
   animation-iteration-count: 1;
   animation-direction: normal;

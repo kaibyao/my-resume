@@ -1,0 +1,37 @@
+.skills h2 {
+  margin-bottom: 0.1em;
+}
+
+.skills-content {
+  margin: 0;
+}
+
+.skill-group {
+  margin-right: 1em;
+  display: inline;
+}
+
+.skill-item {
+  display: inline;
+}
+
+.skill-highlight {
+  animation-duration: 3000ms;
+  animation-name: skill-highlight;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+@keyframes skill-highlight {
+  from {
+    color: var(--link-color);
+  }
+
+  50% {
+    color: var(--link-color);
+  }
+
+  to {
+    color: inherit;
+  }
+}

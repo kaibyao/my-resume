@@ -7,7 +7,7 @@ import clsx from "clsx";
 export const SkillsNotificationToast: React.FC = () => {
   const [skills] = useAtom(skillsNotificationQueueAtom);
   const skillsDeduped = useMemo(() => [...new Set(skills)], [skills]);
-  const [delayHideSkillsTimeoutId, setDelayHideSkillsTimeoutId] = useState(-1);
+  const [delayHideSkillsTimeoutId, setDelayHideSkillsTimeoutId] = useState<NodeJS.Timeout | number>(-1);
   const [displayedSkills, setDisplayedSkills] = useState(skillsDeduped);
   const [isDisplayed, setIsDisplayed] = useState(false); // hide before skills disappear
 
@@ -30,7 +30,7 @@ export const SkillsNotificationToast: React.FC = () => {
         setDisplayedSkills(skillsDeduped);
         setIsDisplayed(true);
 
-        if (delayHideSkillsTimeoutId > -1) {
+        if (delayHideSkillsTimeoutId !== -1) {
           clearTimeout(delayHideSkillsTimeoutId);
           setDelayHideSkillsTimeoutId(-1);
         }
@@ -60,7 +60,7 @@ export const SkillsNotificationToast: React.FC = () => {
           setDisplayedSkills(mostRecentSkillNotifications);
           setIsDisplayed(true);
 
-          if (delayHideSkillsTimeoutId > -1) {
+          if (delayHideSkillsTimeoutId !== -1) {
             clearTimeout(delayHideSkillsTimeoutId);
             setDelayHideSkillsTimeoutId(-1);
           }

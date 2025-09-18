@@ -20,7 +20,7 @@
   opacity: 1;
 }
 
-@media (min-width: 621px) {
+@media (min-height: 500px) {
   .skills-notification-toast {
     display: none;
   }

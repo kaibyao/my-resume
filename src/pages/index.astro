@@ -42,19 +42,21 @@ experiences.sort(
 </PageLayout>
 
 <style>
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--background-color);
+  @media (min-height: 500px) {
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--background-color);
 
-    /* Prevent scroll jitter */
-    border-bottom: 1px solid transparent;
-  }
+      /* Prevent scroll jitter */
+      border-bottom: 1px solid transparent;
+    }
 
-  .sticky-header.scrolled {
-    padding-bottom: 1em;
-    border-bottom: 1px solid #999;
+    .sticky-header.scrolled {
+      padding-bottom: 1em;
+      border-bottom: 1px solid #999;
+    }
   }
 
   @media print {

@@ -1,9 +1,5 @@
 export const skillGroups = [
   {
-    title: "AI",
-    skillNames: ["Claude Code", "Cursor AI", "OpenAI"],
-  },
-  {
     title: "Front-end",
     skillNames: ["TypeScript", "React", "Next.js"],
   },
@@ -19,6 +15,10 @@ export const skillGroups = [
       "Java + Hibernate",
       "MySQL",
     ],
+  },
+  {
+    title: "AI",
+    skillNames: ["Claude Code", "Cursor AI", "OpenAI"],
   },
   {
     title: "Server/Client",

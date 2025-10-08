@@ -47,7 +47,7 @@ export const skillGroups = [
       "Helm",
       "Ansible",
       "Prometheus",
-      "Google Cloud",
+      "Google Cloud (GCP)",
     ],
   },
 ];

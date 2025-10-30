@@ -42,6 +42,7 @@ export const skillGroups = [
       "Docker",
       "Github Actions / CI+CD",
       "Amazon AWS",
+      "AWS Lambda",
       "Datadog",
       "Kubernetes",
       "Helm",

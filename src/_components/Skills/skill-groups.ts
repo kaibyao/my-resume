@@ -18,7 +18,7 @@ export const skillGroups = [
   },
   {
     title: "AI",
-    skillNames: ["Claude Code", "Cursor AI", "OpenAI"],
+    skillNames: ["Claude Code", "Cursor", "OpenAI"],
   },
   {
     title: "Server/Client",
